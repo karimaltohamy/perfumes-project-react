@@ -1,0 +1,50 @@
+$main-color: #e32756;
+
+// menu mobile
+.menu_overflow {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.608);
+  z-index: 999;
+  transition: all 0.4s;
+
+  &.active {
+    left: 0;
+  }
+
+  .menu_mobile {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 75vw;
+    background-color: white;
+    padding: 20px;
+    transition: all 0.3s;
+
+    &.active {
+      left: 0;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 40px;
+
+      a {
+        font-size: 23px;
+        font-weight: 500;
+
+        &:hover,
+        &.active {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+// end menu mobile

@@ -1,0 +1,84 @@
+// start section_types
+.section_types {
+  padding: 50px 0;
+
+  .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+
+    .box {
+      height: 370px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+
+      &:nth-child(1) {
+        background-image: url("../../images/type1.webp");
+      }
+      &:nth-child(2) {
+        background-image: url("../../images/type2.webp");
+      }
+      &:nth-child(3) {
+        background-image: url("../../images/type3.webp");
+      }
+
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+        color: white;
+
+        span {
+          font-size: 25px;
+          font-weight: 600;
+        }
+
+        h4 {
+          font-size: 32px;
+          font-weight: 600;
+        }
+
+        a {
+          font-size: 21px;
+          font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section_types {
+    padding: 20px 0;
+
+    .boxs {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+
+      .box {
+        height: 270px;
+
+        .text {
+          left: 20px;
+          span {
+            font-size: 23px;
+          }
+
+          h4 {
+            font-size: 28px;
+          }
+
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+// end section_types

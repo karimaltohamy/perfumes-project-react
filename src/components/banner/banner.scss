@@ -1,0 +1,79 @@
+// start banner_section
+.banner_section {
+  padding: 40px 0;
+
+  .line {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .box {
+      width: 50%;
+      height: 450px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 0.9;
+      }
+
+      &:nth-child(1) {
+        background-image: url("../../images/baner2.webp");
+      }
+      &:nth-child(2) {
+        background-image: url("../../images/baner1.webp");
+      }
+
+      .text {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+
+        h4 {
+          font-size: 25px;
+          font-weight: 600;
+        }
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .banner_section {
+    padding: 20px 0;
+
+    .line {
+      flex-direction: column;
+      gap: 15px;
+
+      .box {
+        width: 100%;
+        height: 300px;
+
+        .text {
+          h4 {
+            font-size: 18px;
+          }
+
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+// end banner_section
