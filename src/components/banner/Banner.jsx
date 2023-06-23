@@ -15,7 +15,13 @@ const Banner = () => {
     <div className="banner_section">
       <div className="container mx-auto">
         <div className="line">
-          <Link to={"/shop/women"} className="box">
+          <Link
+            to={"/shop/women"}
+            className="box"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
             <div
               className={
                 defaultLang === "ar" ? "text left-auto right-8" : "text"
@@ -32,7 +38,13 @@ const Banner = () => {
               </span>
             </div>
           </Link>
-          <Link to={"/shop/men"} className="box">
+          <Link
+            to={"/shop/men"}
+            className="box"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
             <div
               className={
                 defaultLang === "ar" ? "text left-auto right-8" : "text"

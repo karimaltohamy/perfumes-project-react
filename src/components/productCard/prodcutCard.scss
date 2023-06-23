@@ -1,0 +1,22 @@
+$main-color: #e32756;
+
+// start product card
+.box {
+  text-align: center;
+  .image {
+    margin-bottom: 10px;
+    img {
+      height: 330px;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  span {
+    color: $main-color;
+  }
+}
+// end product card

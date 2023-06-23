@@ -3,6 +3,11 @@ $main-color: #e32756;
 // start header
 .header {
   padding: 10px 0;
+
+  &.bg_active {
+    background-color: #f7f5ed;
+  }
+
   .content {
     display: flex;
     align-items: center;

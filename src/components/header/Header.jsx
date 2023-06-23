@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logoImg from "../../images/logo_300x.webp";
 import { NavLink, Link } from "react-router-dom";
-import { CgProfile } from "react-icons/cg";
+import { FiLogIn } from "react-icons/fi";
 import { MdLanguage } from "react-icons/md";
 import { BiMenu } from "react-icons/bi";
 import "./header.scss";
@@ -10,7 +10,7 @@ import langEn from "../../images/Flag-United-States-of-America.webp";
 import MenuMobile from "../menuMobile/MenuMobile";
 import { useTranslation } from "react-i18next";
 
-const Header = () => {
+const Header = ({ bgActive }) => {
   const { t, i18n } = useTranslation();
   const [openLangList, setOpenLangList] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className={`header ${bgActive ? "bg_active" : ""}`}>
       <div className="container mx-auto">
         <div className="content">
           <div className="logo">
@@ -53,6 +53,12 @@ const Header = () => {
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               {t("women's")}
+            </NavLink>
+            <NavLink
+              to={"/contact-us"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {t("Contact us")}
             </NavLink>
           </div>
           <div className="info">
@@ -94,7 +100,7 @@ const Header = () => {
             </div>
 
             <Link to={"/login"} className=" hidden md:block">
-              <CgProfile size={25} />
+              <FiLogIn size={25} />
             </Link>
 
             <Link to={"/contact-us"} className="btn_contact">

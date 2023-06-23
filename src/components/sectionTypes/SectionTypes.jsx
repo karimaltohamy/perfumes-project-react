@@ -15,7 +15,12 @@ const SectionTypes = () => {
     <div className="section_types">
       <div className="container mx-auto">
         <div className="boxs">
-          <div className="box">
+          <div
+            className="box"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="300"
+          >
             <div
               className={
                 defaultLang === "ar" ? "text left-auto right-8" : "text"
@@ -33,7 +38,12 @@ const SectionTypes = () => {
               </Link>
             </div>
           </div>
-          <div className="box">
+          <div
+            className="box"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="600"
+          >
             <div
               className={
                 defaultLang === "ar" ? "text left-auto right-8" : "text"
@@ -51,7 +61,12 @@ const SectionTypes = () => {
               </Link>
             </div>
           </div>
-          <div className="box">
+          <div
+            className="box"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            data-aos-delay="900"
+          >
             <div
               className={
                 defaultLang === "ar" ? "text left-auto right-8" : "text"

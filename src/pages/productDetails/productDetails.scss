@@ -29,7 +29,7 @@ $main-color: #e32756;
 
     .price {
       font-weight: 500;
-      font-size: 17px;
+      font-size: 22px;
       color: $main-color;
     }
 
@@ -45,6 +45,38 @@ $main-color: #e32756;
       background-color: #333333;
       color: white;
       border-radius: 3px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product_details {
+    padding: 40px 0;
+    flex-direction: column;
+
+    .left,
+    .right {
+      width: 100%;
+    }
+
+    .right {
+      h1 {
+        font-size: 25px;
+      }
+
+      .price {
+        font-size: 18px;
+      }
+
+      .desc {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      .btn_cart {
+        padding: 5px 20px;
+        font-size: 15px;
+      }
     }
   }
 }

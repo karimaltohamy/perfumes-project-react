@@ -1,0 +1,36 @@
+$main-color: #e32756;
+
+// start secound_hero
+.secound_hero {
+  background-image: url(../../images//background-heading-page.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+
+  .container {
+    height: 100%;
+
+    .content {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      h1 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      p {
+        a {
+          &:last-child {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+// end secound_hero

@@ -4,50 +4,121 @@ $main-color: #e32756;
 .hero {
   height: calc(100vh - 61px);
 
-  .swiper {
-    .line {
+  .line {
+    height: 100%;
+    background-color: #f7f5ed;
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
       height: 100%;
+    }
 
-      &.bg-1 {
-        background-color: #effafa;
+    .left,
+    .right {
+      width: 50%;
+    }
+
+    .left {
+      position: relative;
+      z-index: 99;
+
+      h1 {
+        font-size: 50px;
+        font-weight: 700;
+
+        span {
+          color: $main-color;
+        }
       }
 
-      &.bg-2 {
-        background-color: #f7e6ea;
+      p {
+        font-size: 19px;
+        line-height: 1.6;
+        color: gray;
+        margin-bottom: 15px;
       }
 
-      .container {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        height: 100%;
+      a {
+        padding: 10px 25px;
+        background-color: $main-color;
+        color: white;
+        display: inline-block;
+        font-weight: 500;
+        border-radius: 50px;
       }
 
-      .left,
-      .right {
-        width: 50%;
+      .circle_img {
+        position: absolute;
+        top: -150px;
+        left: -20px;
       }
+    }
 
-      .left {
-        h1 {
-          font-size: 50px;
-          font-weight: 700;
+    .right {
+      position: relative;
+      .images {
+        position: relative;
+        z-index: 99;
+        .circle {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          background-color: $main-color;
+          display: block;
+          margin-left: auto;
         }
 
-        p {
-          font-size: 19px;
-          line-height: 1.6;
-          color: gray;
-          margin-bottom: 15px;
+        .border_circle {
+          width: 250px;
+          height: 250px;
+          border-radius: 50%;
+          border: 60px solid #fcc696;
+          display: block;
+          margin-right: auto;
         }
 
-        a {
-          padding: 8px 25px;
-          border: 2px solid black;
-          background-color: transparent;
-          color: black;
-          display: inline-block;
-          font-weight: 500;
+        .image {
+          .hero_img1 {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+          }
+
+          .hero_img2 {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 0%;
+            border-bottom-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            margin-left: auto;
+          }
+        }
+      }
+
+      .rocket_img {
+        position: absolute;
+        top: -50px;
+        right: -100px;
+        animation: scale 4s ease infinite backwards;
+
+        img {
+          width: 150px;
+        }
+      }
+
+      .fligure_img {
+        position: absolute;
+        top: 35px;
+        left: -90px;
+
+        img {
+          width: 95%;
         }
       }
     }
@@ -56,14 +127,13 @@ $main-color: #e32756;
 
 @media (max-width: 768px) {
   .hero {
-    height: 70vh;
-    .swiper {
-      .line {
-        .container {
-          flex-direction: column;
-          text-align: center;
-          justify-content: center;
-        }
+    height: 100vh;
+
+    .line {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
 
         .left,
         .right {
@@ -85,15 +155,65 @@ $main-color: #e32756;
             padding: 6px 20px;
             font-size: 15px;
           }
+
+          .circle_img {
+            top: -50px;
+            img {
+              width: 250px;
+            }
+          }
         }
       }
 
       .right {
-        .image {
-          text-align: center;
+        .images {
+          .circle,
+          .border_circle {
+            width: 200px;
+            height: 200px;
+          }
+
+          .image {
+            .hero_img1,
+            .hero_img2 {
+              width: 200px;
+              height: 200px;
+            }
+          }
+        }
+
+        .rocket_img {
+          right: -10px;
+          top: -70px;
+
           img {
-            width: 70%;
-            margin: auto;
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    .line {
+      .container {
+        .right {
+          .images {
+            .circle,
+            .border_circle {
+              width: 100%;
+              height: 170px;
+            }
+
+            .image {
+              .hero_img1,
+              .hero_img2 {
+                width: 100%;
+                height: 170px;
+              }
+            }
           }
         }
       }
@@ -101,3 +221,17 @@ $main-color: #e32756;
   }
 }
 // end hero
+
+// animation
+
+@keyframes scale {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
