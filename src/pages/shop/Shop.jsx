@@ -6,6 +6,7 @@ import { data } from "autoprefixer";
 import { productsData } from "../../data";
 import ProductCard from "../../components/productCard/ProductCard";
 import SecoundHero from "../../components/secoundHero/SecoundHero";
+import { t } from "i18next";
 
 const Shop = () => {
   const { type } = useParams();
@@ -25,14 +26,15 @@ const Shop = () => {
         <div className="container mx-auto my-[50px]">
           <div className="flex items-center gap-[30px] mb-[25px]">
             <div className="input_item flex items-center gap-3">
-              <label htmlFor="">Sort By</label>
+              <label htmlFor="">{t("Sort By")}</label>
               <select name="" id="">
-                <option value="featured">Featured</option>
-                <option value="best-selling">Best Selling</option>
+                <option value="featured">{t("Featured")}</option>
+                <option value="best-selling">{t("Best Selling")}</option>
               </select>
             </div>
             <p>
-              Showing 1 - {data.length} of {data.length} result
+              {t("Showing")} 1 - {data.length} {t("of")} {data.length}{" "}
+              {t("result")}
             </p>
           </div>
           <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-[30px]">

@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation();
+  let defaultLang = localStorage.getItem("i18nextLng");
+
   return (
     <div className="hero">
       <div className="line bg-2">
@@ -45,7 +47,11 @@ const Hero = () => {
             </div>
           </div>
           <div className="right">
-            <div className="images flex place-items-end justify-center">
+            <div
+              className={`images flex place-items-end justify-center ${
+                defaultLang === "ar" ? "flex-row-reverse" : "flex-row"
+              }`}
+            >
               <div
                 className="w-[50%] h-full"
                 data-aos="zoom-in"
@@ -55,18 +61,28 @@ const Hero = () => {
                 <span className="circle"></span>
               </div>
               <div
-                className="w-[50%] h-full"
+                className="w-[50%] h-full "
                 data-aos="zoom-in"
                 data-aos-duration="1000"
                 data-aos-delay="500"
               >
                 <div className="image">
-                  <img src={heroImg3} alt="hero-img" className="hero_img1" />
+                  <img
+                    src={heroImg3}
+                    alt="hero-img"
+                    className={`hero_img1 ${
+                      defaultLang === "ar" ? "mr-auto" : "mr-0"
+                    } `}
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="images flex items-start justify-end ">
+            <div
+              className={`images flex place-items-end justify-center  ${
+                defaultLang === "ar" ? "flex-row-reverse" : "flex-row"
+              }`}
+            >
               <div
                 className="w-[50%] h-full"
                 data-aos="zoom-in"

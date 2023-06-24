@@ -15,6 +15,7 @@ import { AiFillStar } from "react-icons/ai";
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsDash } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
+import { t } from "i18next";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -89,7 +90,7 @@ const ProductDetails = () => {
               data-aos-duration="1000"
               data-aos-delay={`300`}
             >
-              {singleData.title}
+              {t(singleData.title)}
             </h1>
             <span
               className="price "
@@ -107,7 +108,7 @@ const ProductDetails = () => {
             >
               <div className="detail flex items-center gap-2">
                 <span className="font-semibold text-[14px] md:text-[17px]">
-                  Size:
+                  {t("Size")}:
                 </span>
                 <span className="py-1 px-2 bg-[#F6EBDE] text-[14px] md:text-[14px]">
                   3.5 oz
@@ -115,7 +116,7 @@ const ProductDetails = () => {
               </div>
               <div className="detail flex items-center gap-2">
                 <span className="font-semibold text-[14px] md:text-[17px]">
-                  Fragrance:
+                  {t("Fragrance2")}:
                 </span>
                 <span className="py-1 px-2 bg-[#F6EBDE] text-[14px] md:text-[14px]">
                   Cardamom
@@ -123,7 +124,7 @@ const ProductDetails = () => {
               </div>
               <div className="detail flex items-center gap-2">
                 <span className="font-semibold text-[14px] md:text-[17px]">
-                  Year Introduced:
+                  {t("Year Introduced")}:
                 </span>
                 <span className="py-1 px-2 bg-[#F6EBDE] text-[14px] md:text-[14px]">
                   1972
@@ -131,7 +132,7 @@ const ProductDetails = () => {
               </div>
               <div className="detail flex items-center gap-2">
                 <span className="font-semibold text-[14px] md:text-[17px]">
-                  Type:
+                  {t("Type")}:
                 </span>
                 <span className="py-1 px-2 bg-[#F6EBDE] text-[14px] md:text-[14px]">
                   {singleData.type}
@@ -173,7 +174,7 @@ const ProductDetails = () => {
               data-aos-duration="1000"
               data-aos-delay={`800`}
             >
-              Buy it now
+              {t("Buy it now")}
             </Link>
             <div
               className="mt-2 md:mt-5"
@@ -182,7 +183,7 @@ const ProductDetails = () => {
               data-aos-delay={`900`}
             >
               <h4 className="text-[15px] md:text-[18px] font-semibold">
-                100% Secured Payment
+                {t("100% Secured Payment")}
               </h4>
               <img src={imgSecure} alt="img-secure" className="mt-4 w-full" />
             </div>

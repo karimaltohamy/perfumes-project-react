@@ -4,6 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { productsData } from "../../data";
 import { useParams, useSearchParams } from "react-router-dom";
 import imgProduct1 from "../../images/product1.webp";
+import { t } from "i18next";
 
 const CheckOut = () => {
   const { id } = useParams();
@@ -42,23 +43,24 @@ const CheckOut = () => {
             <div className="logo">
               <h4>Odour</h4>
               <p className="flex items-center gap-1 text-[12px] mdtext-[15px] text-gray-600">
-                <span>Cart</span> <MdKeyboardArrowRight size={18} />{" "}
-                <span>Information</span> <MdKeyboardArrowRight size={18} />
-                <span>Shipping</span> <MdKeyboardArrowRight size={18} />{" "}
-                <span>Payment</span>
+                <span>{t("Cart")}</span> <MdKeyboardArrowRight size={18} />{" "}
+                <span>{t("Information")}</span>{" "}
+                <MdKeyboardArrowRight size={18} />
+                <span>{t("Shipping")}</span> <MdKeyboardArrowRight size={18} />{" "}
+                <span>{t("Payment")}</span>
               </p>
               <form action="">
                 <div className="input_item">
-                  <label htmlFor="">Contact</label>
+                  <label htmlFor="">{t("Contact")}</label>
                   <input
                     type="text"
-                    placeholder="Email or mobile phone number"
+                    placeholder={t("Email or mobile phone number")}
                     className="m-0 focus:border-blue-500"
                     id="email"
                     onChange={(e) => handleChange(e)}
                   />
                 </div>
-                <h5 className="title_Shipping">Shipping address</h5>
+                <h5 className="title_Shipping">{t("Shipping address")}</h5>
                 <div className="input_item">
                   <select
                     name="countryCode"
@@ -308,13 +310,13 @@ const CheckOut = () => {
                     <option value="ZM">Zambia</option>
                     <option value="ZW">Zimbabwe</option>
                   </select>
-                  <span className="text_country">Country/Region</span>
+                  <span className="text_country">{t("Country/Region")}</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="input_item w-full md:w-[50%]">
                     <input
                       type="text"
-                      placeholder="First Name"
+                      placeholder={t("First Name")}
                       id="firstName"
                       onChange={(e) => handleChange(e)}
                     />
@@ -322,7 +324,7 @@ const CheckOut = () => {
                   <div className="input_item w-full md:w-[50%]">
                     <input
                       type="text"
-                      placeholder="Last Name"
+                      placeholder={t("Last Name")}
                       id="lastName"
                       onChange={(e) => handleChange(e)}
                     />
@@ -331,7 +333,7 @@ const CheckOut = () => {
                 <div className="input_item">
                   <input
                     type="text"
-                    placeholder="Address"
+                    placeholder={t("Address")}
                     id="address"
                     onChange={(e) => handleChange(e)}
                   />
@@ -339,7 +341,7 @@ const CheckOut = () => {
                 <div className="input_item">
                   <input
                     type="text"
-                    placeholder="Apartment, suite, etc. (optional)"
+                    placeholder={t("Apartment, suite, etc. (optional)")}
                     id="apartment"
                     onChange={(e) => handleChange(e)}
                   />
@@ -348,7 +350,7 @@ const CheckOut = () => {
                   <div className="input_item w-full md:w-[33%]">
                     <input
                       type="text"
-                      placeholder="City"
+                      placeholder={"City"}
                       id="city"
                       onChange={(e) => handleChange(e)}
                     />
@@ -356,7 +358,7 @@ const CheckOut = () => {
                   <div className="input_item w-full md:w-[33%]">
                     <input
                       type="text"
-                      placeholder="Governorate"
+                      placeholder={t("Governorate")}
                       id="governorate"
                       onChange={(e) => handleChange(e)}
                     />
@@ -364,13 +366,13 @@ const CheckOut = () => {
                   <div className="input_item w-full md:w-[33%]">
                     <input
                       type="text"
-                      placeholder="Postal code"
+                      placeholder={t("Postal code")}
                       id="postalCode"
                       onChange={(e) => handleChange(e)}
                     />
                   </div>
                 </div>
-                <button className="btn_submit">Payment</button>
+                <button className="btn_submit">{t("Payment")}</button>
               </form>
             </div>
           </div>
@@ -388,24 +390,28 @@ const CheckOut = () => {
                       {quantity}
                     </span>
                   </div>
-                  <h5>{data.title}</h5>
+                  <h5>{t(data.title)}</h5>
                 </div>
                 <span>${data.price}</span>
               </div>
               <div className="mt-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[15px] font-medium mb-3">Subtotal</span>
+                  <span className="text-[15px] font-medium mb-3">
+                    {t("Subtotal")}
+                  </span>
                   <span className="text-gray-500 text-[15px]">
                     ${data.price * quantity}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-[15px] font-medium mb-3">Shipping</span>
+                  <span className="text-[15px] font-medium mb-3">
+                    {t("Shipping")}
+                  </span>
                   <span className="text-gray-500 text-[15px]">${Shipping}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[15px] font-semibold mb-3 md:text-[19px]">
-                    Total
+                    {t("Total")}
                   </span>
                   <span className="text-gray-500 text-[15px] md:text-[17px]">
                     ${data.price * quantity + Shipping}
